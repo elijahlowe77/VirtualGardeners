@@ -26,7 +26,7 @@ public class Pruner : MonoBehaviour
     {
         if (isUsing && other.CompareTag("Bush"))
         {
-            other.GetComponent<Bush>()?.Prune();
+            other.GetComponentInParent<Bush>()?.Prune();
         }
     }
 }
