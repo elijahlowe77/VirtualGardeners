@@ -18,7 +18,7 @@ public class GardenTool : MonoBehaviour
 
         if (other.CompareTag("Dirt"))
         {
-            Dirt dirt = other.GetComponent<Dirt>();
+            Dirt dirt = other.GetComponentInParent<Dirt>();
             if (dirt != null) dirt.ChangeState(stateToSet);
         }
     }

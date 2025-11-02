@@ -36,7 +36,7 @@ public class WateringCan : MonoBehaviour
                 if (hit.collider.CompareTag("Dirt"))
                 {
                     // Water dirt
-                    Dirt dirt = hit.collider.GetComponent<Dirt>();
+                    Dirt dirt = hit.collider.GetComponentInParent<Dirt>();
                     if (dirt != null)
                         dirt.Water();
                 }
