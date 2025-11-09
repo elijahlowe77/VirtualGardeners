@@ -1078,8 +1078,19 @@
                     "id": "8e383b1a-270f-4c20-819b-89a59cffb498",
                     "path": "<XRController>{LeftHand}/{Primary2DAxis}",
                     "interactions": "",
-                    "processors": "StickDeadzone",
+                    "processors": "StickDeadzone(min=1.401298E-45)",
                     "groups": "Continuous Move",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13932877-cb49-4c6a-9e43-7a5fbb3a5bba",
+                    "path": "<XRController>/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
