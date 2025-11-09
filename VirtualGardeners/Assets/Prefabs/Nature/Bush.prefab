@@ -50,8 +50,10 @@ MonoBehaviour:
   bushNormal: {fileID: 4820021133600801025}
   bushTrimmed: {fileID: 6055095991420488303}
   bushPruned: {fileID: 4651444899595798817}
-  pruneParticles: {fileID: 0}
+  pruneParticles: {fileID: 4170737920009065688, guid: 22a71cac3e8ac4d0f942ac06a889fe83,
+    type: 3}
   pruneSound: {fileID: 0}
+  state: 0
 --- !u!1001 &1642316472657318424
 PrefabInstance:
   m_ObjectHideFlags: 0

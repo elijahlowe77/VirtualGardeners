@@ -56,10 +56,14 @@ MonoBehaviour:
   dirtRaked: {fileID: 6939551925053559465}
   sprout: {fileID: 6086767149426847488}
   plant: {fileID: 6817327482829401444}
-  digParticles: {fileID: 0}
-  seedParticles: {fileID: 0}
-  rakeParticles: {fileID: 0}
-  growthParticles: {fileID: 0}
+  digParticles: {fileID: 6202717047674047707, guid: 6247dec761c4b485b821b2e8c6c51f0b,
+    type: 3}
+  seedParticles: {fileID: 6202717047674047707, guid: 6247dec761c4b485b821b2e8c6c51f0b,
+    type: 3}
+  rakeParticles: {fileID: 6202717047674047707, guid: 6247dec761c4b485b821b2e8c6c51f0b,
+    type: 3}
+  growthParticles: {fileID: 2369508484580394855, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+    type: 3}
   digSound: {fileID: 0}
   seedSound: {fileID: 0}
   rakeSound: {fileID: 0}
