@@ -12,7 +12,8 @@ public class Bush : MonoBehaviour
     public ParticleSystem pruneParticles;
     public AudioSource pruneSound;
 
-    private float state = 0; // 0 = untrimmed, 1 = partially trimmed, 2 = fully trimmed
+    [HideInInspector]
+    public float state = 0; // 0 = untrimmed, 1 = partially trimmed, 2 = fully trimmed
 
     private void Start()
     {
