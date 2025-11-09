@@ -36,9 +36,8 @@ public class Dirt : MonoBehaviour
     public float sproutTime = 10f;
     public float growthTime = 10f;
 
-    [Header("Read-Only")]
-    public string state = "Normal";
-    public bool watered = false;
+    [HideInInspector] public string state = "Normal";
+    [HideInInspector] public bool watered = false;
 
     private void Start()
     {
