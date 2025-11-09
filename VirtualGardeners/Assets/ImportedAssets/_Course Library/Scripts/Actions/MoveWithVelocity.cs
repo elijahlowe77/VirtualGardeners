@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Move an object using velocity
@@ -12,7 +13,35 @@ public class MoveWithVelocity : MonoBehaviour
     [Tooltip("Controls the direction of movement")]
     public Transform origin = null;
 
+    [Tooltip("Input action that supplies the left-hand move vector (X = strafe, Y = forward).")]
+    [SerializeField] private InputActionProperty leftHandMoveAction;
+
     private Vector3 inputVelocity = Vector3.zero;
+    private void OnEnable()
+    {
+        if (leftHandMoveAction.action != null)
+            leftHandMoveAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        if (leftHandMoveAction.action != null)
+            leftHandMoveAction.action.Disable();
+    }
+
+    private void Update()
+    {
+        if (leftHandMoveAction.action == null)
+            return;
+
+        Vector2 move = leftHandMoveAction.action.ReadValue<Vector2>();
+        inputVelocity.x = move.x;
+        inputVelocity.z = move.y;
+
+        if (move.sqrMagnitude > 0.0001f)
+            Debug.Log($"Left-hand move input: {move}");
+    }
+
     private Rigidbody rigidBody = null;
 
     private void Awake()
