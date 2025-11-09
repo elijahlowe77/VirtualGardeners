@@ -7,6 +7,7 @@ TagManager:
   - Dirt
   - Seed
   - Bush
+  - Weed
   - Trash
   layers:
   - Default
