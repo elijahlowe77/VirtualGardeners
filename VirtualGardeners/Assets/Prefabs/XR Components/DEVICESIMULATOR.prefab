@@ -8,10 +8,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1073113690753950194, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: grabInputLeft.m_Action.m_Name
+      value: Grab Input Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073113690753950194, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: grabInputRight.m_Action.m_Name
+      value: Grab Input Right
+      objectReference: {fileID: 0}
     - target: {fileID: 4020055454078954365, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
       propertyPath: m_Name
-      value: Player Device Simulator Variant
+      value: DEVICESIMULATOR
       objectReference: {fileID: 0}
     - target: {fileID: 7660702006737152564, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
