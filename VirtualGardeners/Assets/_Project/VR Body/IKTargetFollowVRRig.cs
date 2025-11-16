@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Reflection;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [System.Serializable]
 public class VRMap
@@ -8,27 +10,64 @@ public class VRMap
     public Transform headTarget; 
     public Transform ikTarget;
     public Vector3 trackingPositionOffset;   
-     
+    private UnityEngine.XR.Interaction.Toolkit.SnapTurnProviderWrapper snapTurnProviderWrapper;     
     private Vector3 PreviousTrackingPositionOffset; 
     private Vector3 PreviousTrackingRotationOffset;
     public Vector3 trackingRotationOffset; 
     public Vector3 headTargetOffset; 
     public Vector3 GrabOffsetPosition;  
-    public Vector3 GrabOffsetRotation; 
+    public Vector3 GrabOffsetRotation;  
+    private float SnapTurnAngle = 45;
     public void Map()
-    {
-        
+    { 
+
          if(headTarget != null){  
              ikTarget.position = headTarget.TransformPoint(trackingPositionOffset);    
              ikTarget.position = new Vector3(ikTarget.position.x, headTarget.position.y + headTargetOffset.y, ikTarget.position.z); 
-             ikTarget.rotation = headTarget.rotation * Quaternion.Euler(trackingRotationOffset);
+             ikTarget.rotation = headTarget.rotation * Quaternion.Euler(trackingRotationOffset);  
+             
+             snapTurnProviderWrapper = vrTarget.GetComponent<SnapTurnProviderWrapper>(); 
+             if(snapTurnProviderWrapper != null){
+                BodyRotation(snapTurnProviderWrapper);
+             }
+
        } 
        else{
             ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);  
             ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
         }
     }  
-    
+    public void BodyRotation(SnapTurnProviderWrapper snapTurnProviderWrapper)
+    { 
+         var Camera = vrTarget.GetChild(0);
+        float yRotation = headTarget.eulerAngles.y;  
+        var angle = Mathf.Abs(yRotation - SnapTurnAngle);
+         Debug.Log("Y Rotation: " + SnapTurnAngle + " Angle: " + angle);      
+         if(angle > 360){
+            angle = 360 - angle;
+         }
+        if(angle <2 && yRotation < SnapTurnAngle+5){ 
+            snapTurnProviderWrapper.TriggerSnapTurn(45);  
+            Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
+             SnapTurnAngle += 45; 
+        }  
+        else if(angle > 85 && angle < 90){ 
+            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
+            Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
+             SnapTurnAngle -= 45; 
+        }
+        else if(angle > 265 && angle < 270){ 
+            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
+            Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
+             SnapTurnAngle -= 45; 
+        } 
+        else if (angle > 355 && angle < 360){
+            snapTurnProviderWrapper.TriggerSnapTurn(45);  
+            Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
+             SnapTurnAngle += 45; 
+        }
+       
+    }
     public void Grab()
     {
         PreviousTrackingPositionOffset = trackingPositionOffset; 
@@ -40,7 +79,8 @@ public class VRMap
     {
         trackingPositionOffset = PreviousTrackingPositionOffset;
         trackingRotationOffset = PreviousTrackingRotationOffset;
-    }
+    } 
+    
  
 } 
  
