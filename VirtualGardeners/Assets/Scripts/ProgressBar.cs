@@ -1,12 +1,18 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class ProgressBar : MonoBehaviour
 {
-    [Header("Text")]
+    [Header("Progress Displays")]
     public TMP_Text progressBarText; // TMP text of progress bar
+    public UnityEngine.UI.Image circle; // circular progress indicator
+
+    [Header("Tally Displays")] // ONLY the number part, not label
+    public TMP_Text plantTally;
+    public TMP_Text bushTally;
+    public TMP_Text trashTally;
+    public TMP_Text compostTally;
 
     [Header("Progress Weights")]
     public float plantWeight;       // Weight of planting
@@ -21,15 +27,18 @@ public class ProgressBar : MonoBehaviour
     private Dirt[] allDirt;
     private Bush[] allBushes;
 
+    public float progressTest;
+
     void Start()
     {
-        UpdateProgress();
-
         // Find all dirt objects
         allDirt = FindObjectsOfType<Dirt>();
 
         // Find all bush objects
         allBushes = FindObjectsOfType<Bush>();
+
+        // Begin the slow loop
+        StartCoroutine(SlowUpdate());
     }
 
     // Runs every second (like Update() but less frequent)
@@ -117,9 +126,12 @@ public class ProgressBar : MonoBehaviour
         progress += composter.GetPercentDone() * compostWeight;
         progress += trashCan.GetPercentDone() * trashWeight;
 
-        // Display progress
+        progress = progressTest;
+
+        // Display progress on watch
         int progress_int = Mathf.RoundToInt(progress * 100f);
-        progressBarText.text = progress_int + "%";
+        progressBarText.text = progress_int + "%"; // text
+        circle.fillAmount = progress; // circle fill
     }
 
     private void UpdateTallies()
@@ -127,9 +139,13 @@ public class ProgressBar : MonoBehaviour
         // Get progress tallies for (X / Y) task display
         var (dirtDone, dirtTotal) = GetDirtDone();
         var (bushesDone, bushesTotal) = GetBushesDone();
-        var (compostDone, compostTotal) = trashCan.GetAmountDone();
         var (trashDone, trashTotal) = composter.GetAmountDone();
+        var (compostDone, compostTotal) = trashCan.GetAmountDone();
 
-        // TODO ----- DISPLAY TALLIES SOMEWHERE
+        // Write to sign
+        plantTally.text = dirtDone + "/" + dirtTotal;
+        bushTally.text = bushesDone + "/" + bushesTotal;
+        trashTally.text = trashDone + "/" + trashTotal;
+        compostTally.text = compostDone + "/" + compostTotal;
     }
 }
