@@ -21,15 +21,16 @@ public class VRMap
     public void Map()
     { 
 
-         if(headTarget != null){  
+         if(headTarget != null){   
+            snapTurnProviderWrapper = vrTarget.GetComponent<SnapTurnProviderWrapper>(); 
+             if(snapTurnProviderWrapper != null){
+                BodyRotation(snapTurnProviderWrapper);
+             }
              ikTarget.position = headTarget.TransformPoint(trackingPositionOffset);    
              ikTarget.position = new Vector3(ikTarget.position.x, headTarget.position.y + headTargetOffset.y, ikTarget.position.z); 
              ikTarget.rotation = headTarget.rotation * Quaternion.Euler(trackingRotationOffset);  
              
-             snapTurnProviderWrapper = vrTarget.GetComponent<SnapTurnProviderWrapper>(); 
-             if(snapTurnProviderWrapper != null){
-                BodyRotation(snapTurnProviderWrapper);
-             }
+             
 
        } 
        else{
@@ -41,30 +42,40 @@ public class VRMap
     { 
          var Camera = vrTarget.GetChild(0);
         float yRotation = headTarget.eulerAngles.y;  
-        var angle = Mathf.Abs(yRotation - SnapTurnAngle);
-         Debug.Log("Y Rotation: " + SnapTurnAngle + " Angle: " + angle);      
+        var angle = Mathf.Round(yRotation - SnapTurnAngle);  
+            
+        if (angle < 0){
+            angle = 360 + angle;
+        }
          if(angle > 360){
             angle = 360 - angle;
-         }
-        if(angle <2 && yRotation < SnapTurnAngle+5){ 
-            snapTurnProviderWrapper.TriggerSnapTurn(45);  
+         } 
+          Debug.Log("Y Rotation: " + SnapTurnAngle + " Angle: " + angle); 
+        if(angle == 0){  
+            var angleOffset = angle +35;
+            snapTurnProviderWrapper.TriggerSnapTurn(angleOffset);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle += 45; 
+             SnapTurnAngle += angleOffset;  
+
         }  
-        else if(angle > 85 && angle < 90){ 
-            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
+        else if(angle==90){ 
+            var angleOffset = angle - 80;
+            snapTurnProviderWrapper.TriggerSnapTurn(-35 - angleOffset);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle -= 45; 
+             SnapTurnAngle += -35 - angleOffset; 
         }
-        else if(angle > 265 && angle < 270){ 
-            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
+        else if(angle == 270){ 
+
+            var angleOffset = angle - 260;
+            snapTurnProviderWrapper.TriggerSnapTurn(-35 - angleOffset);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle -= 45; 
+             SnapTurnAngle += -45; 
         } 
-        else if (angle > 355 && angle < 360){
-            snapTurnProviderWrapper.TriggerSnapTurn(45);  
+        else if (angle == 360){ 
+            var angleOffset = angle - 350; 
+            snapTurnProviderWrapper.TriggerSnapTurn(35 + angleOffset);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle += 45; 
+             SnapTurnAngle += 35 + angleOffset;     
         }
        
     }
@@ -126,8 +137,9 @@ public class IKTargetFollowVRRig : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-    // Update is called once per frame
-    void Update()
+    
+    // LateUpdate runs after all Updates - better for following transforms (reduces jitter)
+    void LateUpdate()
     {
         transform.position = head.ikTarget.position + headBodyPositionOffset;
         float yaw = head.vrTarget.eulerAngles.y;
