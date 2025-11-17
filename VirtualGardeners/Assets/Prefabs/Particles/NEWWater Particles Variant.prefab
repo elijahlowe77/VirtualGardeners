@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 7429608537287182224, guid: a578c90685039411fac648f5f9296227,
         type: 3}
       propertyPath: m_Name
-      value: Water Particles Variant
+      value: NEWWater Particles Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7477588450066408498, guid: a578c90685039411fac648f5f9296227,
         type: 3}
@@ -26,6 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7477588450066408498, guid: a578c90685039411fac648f5f9296227,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477588450066408498, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
       propertyPath: m_UseCustomVertexStreams
       value: 1
       objectReference: {fileID: 0}
@@ -34,6 +39,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 30fcd86736ffce840bb85533b511acfb, type: 2}
+    - target: {fileID: 7477588450066408498, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5357368b4db6ca4bbac3c775b862003, type: 2}
     - target: {fileID: 7477588450066408498, guid: a578c90685039411fac648f5f9296227,
         type: 3}
       propertyPath: m_VertexStreams.Array.size
@@ -56,6 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
         type: 3}
+      propertyPath: TrailModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
       propertyPath: CollisionModule.type
       value: 1
       objectReference: {fileID: 0}
@@ -71,6 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
         type: 3}
+      propertyPath: TrailModule.textureMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
       propertyPath: CustomDataModule.enabled
       value: 0
       objectReference: {fileID: 0}
@@ -78,6 +98,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
+        type: 3}
+      propertyPath: TrailModule.minVertexDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8643170768775115284, guid: a578c90685039411fac648f5f9296227,
         type: 3}
@@ -102,17 +132,17 @@ PrefabInstance:
     - target: {fileID: 9150528439260047253, guid: a578c90685039411fac648f5f9296227,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.001063029
+      value: 180.65971
       objectReference: {fileID: 0}
     - target: {fileID: 9150528439260047253, guid: a578c90685039411fac648f5f9296227,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.368
+      value: 0.70069313
       objectReference: {fileID: 0}
     - target: {fileID: 9150528439260047253, guid: a578c90685039411fac648f5f9296227,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3813
+      value: -70.27643
       objectReference: {fileID: 0}
     - target: {fileID: 9150528439260047253, guid: a578c90685039411fac648f5f9296227,
         type: 3}

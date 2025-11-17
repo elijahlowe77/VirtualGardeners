@@ -51,31 +51,31 @@ public class VRMap
             angle = 360 - angle;
          } 
           Debug.Log("Y Rotation: " + SnapTurnAngle + " Angle: " + angle); 
-        if(angle == 0){  
+        if(angle >= 0 && angle <= 10){  
             var angleOffset = angle +35;
-            snapTurnProviderWrapper.TriggerSnapTurn(angleOffset);  
+            snapTurnProviderWrapper.TriggerSnapTurn(45);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle += angleOffset;  
+             SnapTurnAngle += 45;  
 
         }  
-        else if(angle==90){ 
+        else if(angle >= 80 && angle <= 90){ 
             var angleOffset = angle - 80;
-            snapTurnProviderWrapper.TriggerSnapTurn(-35 - angleOffset);  
+            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle += -35 - angleOffset; 
+             SnapTurnAngle += -45; 
         }
-        else if(angle == 270){ 
+        else if(angle >= 260 && angle <= 270){ 
 
             var angleOffset = angle - 260;
-            snapTurnProviderWrapper.TriggerSnapTurn(-35 - angleOffset);  
+            snapTurnProviderWrapper.TriggerSnapTurn(-45);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
              SnapTurnAngle += -45; 
         } 
-        else if (angle == 360){ 
+        else if (angle > 350 && angle < 360){ 
             var angleOffset = angle - 350; 
-            snapTurnProviderWrapper.TriggerSnapTurn(35 + angleOffset);  
+            snapTurnProviderWrapper.TriggerSnapTurn(45);  
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);  
-             SnapTurnAngle += 35 + angleOffset;     
+             SnapTurnAngle += 45;     
         }
        
     }
