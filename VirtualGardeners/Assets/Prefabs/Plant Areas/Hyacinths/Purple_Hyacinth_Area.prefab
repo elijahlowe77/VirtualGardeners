@@ -34,7 +34,7 @@ Transform:
   - {fileID: 7902115869086759475}
   - {fileID: 2333690276014005136}
   - {fileID: 6613463244905371827}
-  - {fileID: 6541069028616334091}
+  - {fileID: 1685859156237392532}
   - {fileID: 956999524170043417}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
   dirtHole: {fileID: 4704967570660144916}
   dirtSeeded: {fileID: 3098039344248730648}
   dirtRaked: {fileID: 800211226080271549}
-  sprout: {fileID: 1469187533355486005}
+  sprout: {fileID: 6467254961619401386}
   plant: {fileID: 435759907181939363}
   digParticles: {fileID: 6202717047674047707, guid: 6247dec761c4b485b821b2e8c6c51f0b,
     type: 3}
@@ -64,9 +64,9 @@ MonoBehaviour:
     type: 3}
   growthParticles: {fileID: 2369508484580394855, guid: c3540c43f70ae4e49ab534f9844f3cf7,
     type: 3}
-  digSound: {fileID: 0}
-  seedSound: {fileID: 0}
-  rakeSound: {fileID: 0}
+  digSound: {fileID: 8300000, guid: bd7d6d8f9efe64749a3be0dd47d8519c, type: 3}
+  seedSound: {fileID: 8300000, guid: de812b515a5c45d4fa030cf39e846e84, type: 3}
+  rakeSound: {fileID: 8300000, guid: 38025832fbb2254429dd042621e613bc, type: 3}
   wetMaterial: {fileID: 2100000, guid: d375ce8f00e37a040920f1435a519ce5, type: 2}
   waterNeeded: 1000
   sproutTime: 10
@@ -555,15 +555,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0f5327d1d13054ab8e58b8f8e60e12, type: 3}
---- !u!1 &1469187533355486005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1897690062035189599, guid: 7f0f5327d1d13054ab8e58b8f8e60e12,
+--- !u!4 &1685859156237392532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6120641386343505761, guid: 7f0f5327d1d13054ab8e58b8f8e60e12,
     type: 3}
   m_PrefabInstance: {fileID: 4870006456982799861}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6541069028616334091 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6120641386343505761, guid: 7f0f5327d1d13054ab8e58b8f8e60e12,
+--- !u!1 &6467254961619401386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1897690062035189599, guid: 7f0f5327d1d13054ab8e58b8f8e60e12,
     type: 3}
   m_PrefabInstance: {fileID: 4870006456982799861}
   m_PrefabAsset: {fileID: 0}

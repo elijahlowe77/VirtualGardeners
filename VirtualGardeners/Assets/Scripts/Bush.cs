@@ -10,7 +10,7 @@ public class Bush : MonoBehaviour
 
     // Particle and noise to play when pruning
     public ParticleSystem pruneParticles;
-    public AudioSource pruneSound;
+    public AudioClip pruneSound;
 
     [HideInInspector]
     public float state = 0; // 0 = untrimmed, 1 = partially trimmed, 2 = fully trimmed
@@ -34,7 +34,12 @@ public class Bush : MonoBehaviour
             bushPruned.SetActive(true);
         }
 
-        if (pruneParticles != null) pruneParticles.Play();
-        if (pruneSound != null) pruneSound.Play();
+        if (pruneParticles != null)
+        {
+            ParticleSystem ps = Instantiate(pruneParticles, transform.position, Quaternion.identity);
+            ps.Play();
+            Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+        }
+        if (pruneSound != null) AudioSource.PlayClipAtPoint(pruneSound, transform.position, 0.5f);
     }
 }

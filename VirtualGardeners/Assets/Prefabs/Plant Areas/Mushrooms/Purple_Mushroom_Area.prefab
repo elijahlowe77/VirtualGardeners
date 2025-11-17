@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7884157397333599432}
   - {fileID: 9053916026534179530}
-  - {fileID: 6778260692246442021}
+  - {fileID: 2835279807942502237}
   - {fileID: 6746766251227798278}
   - {fileID: 9082446261915343341}
   - {fileID: 4156359081416767570}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirtNormal: {fileID: 1182589328146624157}
   dirtHole: {fileID: 5856767762332106733}
-  dirtSeeded: {fileID: 6092706741906022317}
+  dirtSeeded: {fileID: 3297887653314693333}
   dirtRaked: {fileID: 971654085442952968}
   sprout: {fileID: 6965449655704536760}
   plant: {fileID: 3667489464892056296}
@@ -64,9 +64,9 @@ MonoBehaviour:
     type: 3}
   growthParticles: {fileID: 2369508484580394855, guid: c3540c43f70ae4e49ab534f9844f3cf7,
     type: 3}
-  digSound: {fileID: 0}
-  seedSound: {fileID: 0}
-  rakeSound: {fileID: 0}
+  digSound: {fileID: 8300000, guid: bd7d6d8f9efe64749a3be0dd47d8519c, type: 3}
+  seedSound: {fileID: 8300000, guid: de812b515a5c45d4fa030cf39e846e84, type: 3}
+  rakeSound: {fileID: 8300000, guid: 38025832fbb2254429dd042621e613bc, type: 3}
   wetMaterial: {fileID: 2100000, guid: d375ce8f00e37a040920f1435a519ce5, type: 2}
   waterNeeded: 1000
   sproutTime: 10
@@ -795,7 +795,13 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8934806964603193779}
   m_SourcePrefab: {fileID: 100100000, guid: a62f4532684e5c44a85d92a275779a0f, type: 3}
---- !u!1 &6092706741906022317 stripped
+--- !u!4 &2835279807942502237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5553552942907805675, guid: a62f4532684e5c44a85d92a275779a0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7659146377273305270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3297887653314693333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5156254705166344291, guid: a62f4532684e5c44a85d92a275779a0f,
     type: 3}
@@ -807,7 +813,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6092706741906022317}
+  m_GameObject: {fileID: 3297887653314693333}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -823,9 +829,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2437130377123491333, guid: 50a97d03c6455e143ad11397444dbad2, type: 3}
---- !u!4 &6778260692246442021 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5553552942907805675, guid: a62f4532684e5c44a85d92a275779a0f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7659146377273305270}
-  m_PrefabAsset: {fileID: 0}

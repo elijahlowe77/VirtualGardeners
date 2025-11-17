@@ -25,6 +25,7 @@ public class CollectibleContainer : MonoBehaviour
     void Start()
     {
         // Count all item items in the scene at start
+        layer.localPosition = new Vector3(layer.localPosition.x, minHeight, layer.localPosition.z);
         itemsAmount = GameObject.FindGameObjectsWithTag(itemTag).Length;
         if (itemsAmount == 0) this.enabled = false;
         itemsCollected = 0;

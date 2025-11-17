@@ -52,7 +52,7 @@ MonoBehaviour:
   bushPruned: {fileID: 4651444899595798817}
   pruneParticles: {fileID: 4170737920009065688, guid: 22a71cac3e8ac4d0f942ac06a889fe83,
     type: 3}
-  pruneSound: {fileID: 0}
+  pruneSound: {fileID: 8300000, guid: c30be629cb0f2f047926257d3c348fa2, type: 3}
   state: 0
 --- !u!1001 &1642316472657318424
 PrefabInstance:

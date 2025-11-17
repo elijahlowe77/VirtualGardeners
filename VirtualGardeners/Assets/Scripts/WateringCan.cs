@@ -17,7 +17,15 @@ public class WateringCan : MonoBehaviour
 
     void Update()
     {
-        if (!grab.isSelected) return;
+        if (!grab.isSelected)
+        {
+            if (waterParticles != null && waterParticles.isPlaying)
+                waterParticles.Stop();
+            if (waterSound != null && waterSound.isPlaying)
+                waterSound.Stop();
+
+            return;
+        }
 
         if (IsPouring())
         {
