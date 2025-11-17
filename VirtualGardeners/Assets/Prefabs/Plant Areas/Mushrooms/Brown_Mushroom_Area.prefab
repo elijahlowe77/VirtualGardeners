@@ -64,9 +64,9 @@ MonoBehaviour:
     type: 3}
   growthParticles: {fileID: 2369508484580394855, guid: c3540c43f70ae4e49ab534f9844f3cf7,
     type: 3}
-  digSound: {fileID: 0}
-  seedSound: {fileID: 0}
-  rakeSound: {fileID: 0}
+  digSound: {fileID: 8300000, guid: bd7d6d8f9efe64749a3be0dd47d8519c, type: 3}
+  seedSound: {fileID: 8300000, guid: de812b515a5c45d4fa030cf39e846e84, type: 3}
+  rakeSound: {fileID: 8300000, guid: 38025832fbb2254429dd042621e613bc, type: 3}
   wetMaterial: {fileID: 2100000, guid: d375ce8f00e37a040920f1435a519ce5, type: 2}
   waterNeeded: 1000
   sproutTime: 10

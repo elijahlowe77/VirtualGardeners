@@ -22,9 +22,9 @@ public class Dirt : MonoBehaviour
 
     // Sound to play when entering that state
     [Header("Sounds")]
-    public AudioSource digSound;
-    public AudioSource seedSound;
-    public AudioSource rakeSound;
+    public AudioClip digSound;
+    public AudioClip seedSound;
+    public AudioClip rakeSound;
 
     // Material to set dirt to when watered + Water needed to be watered
     [Header("Water")]
@@ -65,8 +65,13 @@ public class Dirt : MonoBehaviour
             dirtNormal.SetActive(false);
             dirtHole.SetActive(true);
 
-            if(digParticles != null) digParticles.Play();
-            if(digSound != null) digSound.Play();
+            if(digParticles != null)
+            {
+                ParticleSystem ps = Instantiate(digParticles, transform.position, Quaternion.identity);
+                ps.Play();
+                Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+            }
+            if(digSound != null) AudioSource.PlayClipAtPoint(digSound, transform.position, 0.4f);
 
             state = newState;
         }
@@ -75,8 +80,13 @@ public class Dirt : MonoBehaviour
             dirtHole.SetActive(false);
             dirtSeeded.SetActive(true);
 
-            if(seedParticles != null) seedParticles.Play();
-            if(seedSound != null) seedSound.Play();
+            if(seedParticles != null)
+            {
+                ParticleSystem ps = Instantiate(seedParticles, transform.position, Quaternion.identity);
+                ps.Play();
+                Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+            }
+            if(seedSound != null) AudioSource.PlayClipAtPoint(seedSound, transform.position, 0.4f);
 
             state = newState;
 
@@ -88,8 +98,13 @@ public class Dirt : MonoBehaviour
             dirtSeeded.SetActive(false);
             dirtRaked.SetActive(true);
 
-            if(rakeParticles != null) rakeParticles.Play();
-            if(rakeSound != null) rakeSound.Play();
+            if(rakeParticles != null)
+            {
+                ParticleSystem ps = Instantiate(rakeParticles, transform.position, Quaternion.identity);
+                ps.Play();
+                Destroy(ps.gameObject, ps.main.duration + ps.main.startLifetime.constantMax);
+            }
+            if(rakeSound != null) AudioSource.PlayClipAtPoint(rakeSound, transform.position, 0.4f);
 
             state = newState;
         }
@@ -124,18 +139,27 @@ public class Dirt : MonoBehaviour
     
     IEnumerator Grow()
     {
-        if(growthParticles != null) growthParticles.Play();
+        ParticleSystem ps;
+        if (growthParticles != null)
+            ps = Instantiate(growthParticles, transform.position, Quaternion.identity);
+        else
+            ps = null;
+
+        if (ps != null) ps.Play();
         yield return new WaitForSeconds(sproutTime);
-        if(growthParticles != null) growthParticles.Stop();
+        if (ps != null) ps.Stop();
         sprout.SetActive(true);
 
         // Halt growth until watered & raked
-        yield return new WaitUntil(() => (watered && state == "Raked"));
+        yield return new WaitUntil(() => watered && state == "Raked");
 
-        if(growthParticles != null) growthParticles.Play();
+        if (ps != null) ps.Play();
         yield return new WaitForSeconds(growthTime);
-        if(growthParticles != null) growthParticles.Stop();
+        if (ps != null) ps.Stop();
+
         sprout.SetActive(false);
         plant.SetActive(true);
+
+        Destroy(ps.gameObject);
     }
 }

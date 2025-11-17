@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6195225765784097969}
   - component: {fileID: 1227153679494750319}
   - component: {fileID: 154226329625818229}
+  - component: {fileID: -2497721549376927607}
   m_Layer: 0
   m_Name: DirtSquare
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2497721549376927607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613728547944899173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019835457, y: 0.021777157, z: 0.019640334}
+  m_Center: {x: -0.000002594199, y: -0.0005347788, z: -0.000102733706}

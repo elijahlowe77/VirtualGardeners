@@ -34,7 +34,7 @@ Transform:
   - {fileID: 2025472576533602293}
   - {fileID: 466473703675684582}
   - {fileID: 8505401513846837077}
-  - {fileID: 4573736105319545757}
+  - {fileID: 7943997296038668974}
   - {fileID: 4378323058678227941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
   dirtHole: {fileID: 3528991440000389842}
   dirtSeeded: {fileID: 929329163118987630}
   dirtRaked: {fileID: 2797887157569424219}
-  sprout: {fileID: 8678110069493852649}
+  sprout: {fileID: 2965977232030611674}
   plant: {fileID: 4001797035209177439}
   digParticles: {fileID: 6202717047674047707, guid: 6247dec761c4b485b821b2e8c6c51f0b,
     type: 3}
@@ -64,9 +64,9 @@ MonoBehaviour:
     type: 3}
   growthParticles: {fileID: 2369508484580394855, guid: c3540c43f70ae4e49ab534f9844f3cf7,
     type: 3}
-  digSound: {fileID: 0}
-  seedSound: {fileID: 0}
-  rakeSound: {fileID: 0}
+  digSound: {fileID: 8300000, guid: bd7d6d8f9efe64749a3be0dd47d8519c, type: 3}
+  seedSound: {fileID: 8300000, guid: de812b515a5c45d4fa030cf39e846e84, type: 3}
+  rakeSound: {fileID: 8300000, guid: 38025832fbb2254429dd042621e613bc, type: 3}
   wetMaterial: {fileID: 2100000, guid: d375ce8f00e37a040920f1435a519ce5, type: 2}
   waterNeeded: 1000
   sproutTime: 10
@@ -282,7 +282,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1964623560955285911, guid: cb6668ec7d2745e4280724d63f9eaf17, type: 3}
+    - {fileID: -3778725948964980816, guid: cb6668ec7d2745e4280724d63f9eaf17, type: 3}
+    - {fileID: 8123141273917358959, guid: cb6668ec7d2745e4280724d63f9eaf17, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -817,15 +820,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fff92e30c45a8054fb7cc149462ab93a, type: 3}
---- !u!4 &4573736105319545757 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2054127267281803281, guid: fff92e30c45a8054fb7cc149462ab93a,
+--- !u!1 &2965977232030611674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6599535136568396389, guid: fff92e30c45a8054fb7cc149462ab93a,
     type: 3}
   m_PrefabInstance: {fileID: 8268334786725737151}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8678110069493852649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6599535136568396389, guid: fff92e30c45a8054fb7cc149462ab93a,
+--- !u!4 &7943997296038668974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2054127267281803281, guid: fff92e30c45a8054fb7cc149462ab93a,
     type: 3}
   m_PrefabInstance: {fileID: 8268334786725737151}
   m_PrefabAsset: {fileID: 0}

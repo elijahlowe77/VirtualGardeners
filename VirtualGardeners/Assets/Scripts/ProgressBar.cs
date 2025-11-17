@@ -27,8 +27,6 @@ public class ProgressBar : MonoBehaviour
     private Dirt[] allDirt;
     private Bush[] allBushes;
 
-    public float progressTest;
-
     void Start()
     {
         // Find all dirt objects
@@ -123,15 +121,13 @@ public class ProgressBar : MonoBehaviour
         // Calculate progress percentage
         progress += GetDirtPercent() * plantWeight;
         progress += GetBushesPercent() * bushWeight;
-        progress += composter.GetPercentDone() * compostWeight;
         progress += trashCan.GetPercentDone() * trashWeight;
-
-        progress = progressTest;
+        progress += composter.GetPercentDone() * compostWeight;
 
         // Display progress on watch
         int progress_int = Mathf.RoundToInt(progress * 100f);
-        progressBarText.text = progress_int + "%"; // text
-        circle.fillAmount = progress; // circle fill
+        if (progressBarText) progressBarText.text = progress_int + "%"; // text
+        if (circle) circle.fillAmount = progress; // circle fill
     }
 
     private void UpdateTallies()
@@ -139,13 +135,13 @@ public class ProgressBar : MonoBehaviour
         // Get progress tallies for (X / Y) task display
         var (dirtDone, dirtTotal) = GetDirtDone();
         var (bushesDone, bushesTotal) = GetBushesDone();
-        var (trashDone, trashTotal) = composter.GetAmountDone();
-        var (compostDone, compostTotal) = trashCan.GetAmountDone();
+        var (trashDone, trashTotal) = trashCan.GetAmountDone();
+        var (compostDone, compostTotal) = composter.GetAmountDone();
 
         // Write to sign
-        plantTally.text = dirtDone + "/" + dirtTotal;
-        bushTally.text = bushesDone + "/" + bushesTotal;
-        trashTally.text = trashDone + "/" + trashTotal;
-        compostTally.text = compostDone + "/" + compostTotal;
+        if (plantTally) plantTally.text = dirtDone + "/" + dirtTotal;
+        if (bushTally) bushTally.text = bushesDone + "/" + bushesTotal;
+        if (trashTally) trashTally.text = trashDone + "/" + trashTotal;
+        if (compostTally) compostTally.text = compostDone + "/" + compostTotal;
     }
 }
