@@ -7095,6 +7095,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 564334138}
     m_Modifications:
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -26087,6 +26111,30 @@ PrefabInstance:
       propertyPath: plant
       value: 
       objectReference: {fileID: 979492949}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -31672,6 +31720,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 413866941}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -33800,6 +33872,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1718832330}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -63301,6 +63397,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1793666132}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -63449,6 +63569,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1482582701}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -65478,6 +65622,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1744539679}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -69889,6 +70057,45 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 686279151}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: sproutTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: waterNeeded
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -72580,6 +72787,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 2084185577}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -73072,7 +73303,7 @@ PrefabInstance:
     - target: {fileID: 5701821784917254566, guid: c3378455bd9221542b772ea341415bea,
         type: 3}
       propertyPath: waterNeeded
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5701821784917254566, guid: c3378455bd9221542b772ea341415bea,
         type: 3}
@@ -81281,6 +81512,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8156405733335946801, guid: 2951da1b71151984187c892ef4e19eb4,
         type: 3}
+      propertyPath: waterNeeded
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156405733335946801, guid: 2951da1b71151984187c892ef4e19eb4,
+        type: 3}
       propertyPath: digParticles
       value: 
       objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
@@ -85224,6 +85460,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1401717664}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -89742,6 +90002,30 @@ PrefabInstance:
       propertyPath: plant
       value: 
       objectReference: {fileID: 1847961056}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -93843,6 +94127,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937063850089997228, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367128156645791816, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1507184024309462083, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93858,10 +94152,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.982
       objectReference: {fileID: 0}
+    - target: {fileID: 3715169184389808724, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4020055454078954365, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758821801057201721, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6831522869102676776, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
@@ -93943,6 +94247,61 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.82
       objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[18].m_Visible
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[12].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[13].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[18].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[19].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[20].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[21].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[22].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[23].m_Style.shape
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349094578278197185, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Effectors.Array.data[18].m_Style.color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587282155887759314, guid: 04fcf8d25164eaf469aae47d42f90a0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9036378796242720906, guid: 04fcf8d25164eaf469aae47d42f90a0a,
         type: 3}
       propertyPath: m_CameraType
@@ -93963,7 +94322,8 @@ PrefabInstance:
       propertyPath: m_VolumeFrameworkUpdateModeOption
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8587282155887759314, guid: 04fcf8d25164eaf469aae47d42f90a0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -98161,6 +98521,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1536155813}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
@@ -104321,6 +104705,30 @@ PrefabInstance:
       propertyPath: sprout
       value: 
       objectReference: {fileID: 1599324030}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: digParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: rakeParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: seedParticles
+      value: 
+      objectReference: {fileID: 7827454034177880611, guid: 1c11d0ba6a1526b4da17e30e7c91612b,
+        type: 3}
+    - target: {fileID: 534009533656023128, guid: ff291b1c32b77fb4095f34e41c59fc6c,
+        type: 3}
+      propertyPath: growthParticles
+      value: 
+      objectReference: {fileID: 4546658933259808303, guid: c3540c43f70ae4e49ab534f9844f3cf7,
+        type: 3}
     - target: {fileID: 3346257023576086432, guid: ff291b1c32b77fb4095f34e41c59fc6c,
         type: 3}
       propertyPath: m_Name
