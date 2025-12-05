@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class TutorialOverlay : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] CanvasGroup tutorialCanvas;
-    [SerializeField] Text tutorialText;
+    [SerializeField] TextMeshProUGUI tutorialText;
+
 
     [Header("Behavior")]
     [SerializeField] bool showOnStart = true;
@@ -34,7 +35,7 @@ public class TutorialOverlay : MonoBehaviour
             tutorialCanvas = GetComponentInChildren<CanvasGroup>(true);
 
         if (tutorialText == null && tutorialCanvas != null) 
-            tutorialText = tutorialCanvas.GetComponentInChildren<Text>(true);
+            tutorialText = tutorialCanvas.GetComponentInChildren<TextMeshProUGUI>(true);
 
         HideImmediate();
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3820803053378433589}
   - component: {fileID: 7549167095918988696}
   - component: {fileID: 194911682111271239}
+  - component: {fileID: 1966633826797348024}
   m_Layer: 6
   m_Name: Dirt Plot
   m_TagString: Dirt
@@ -83,3 +84,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1966633826797348024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006006418955277534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9813d290f6a96404fb4cbbe38a5ef437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirtNormal: {fileID: 0}
+  dirtHole: {fileID: 0}
+  dirtSeeded: {fileID: 0}
+  dirtRaked: {fileID: 0}
+  sprout: {fileID: 0}
+  plant: {fileID: 0}
+  digParticles: {fileID: 0}
+  seedParticles: {fileID: 0}
+  rakeParticles: {fileID: 0}
+  growthParticles: {fileID: 0}
+  digSound: {fileID: 0}
+  seedSound: {fileID: 0}
+  rakeSound: {fileID: 0}
+  wetMaterial: {fileID: 0}
+  waterNeeded: 50
+  sproutTime: 10
+  growthTime: 10
+  state: Normal
+  watered: 0
