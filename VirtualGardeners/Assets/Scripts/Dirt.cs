@@ -45,7 +45,8 @@ public class Dirt : MonoBehaviour
         dirtSeeded.SetActive(false);
         dirtRaked.SetActive(false);
         sprout.SetActive(false);
-        plant.SetActive(false);
+        plant.SetActive(false); 
+        waterNeeded = 10;
     }
 
     // Seed Detection
