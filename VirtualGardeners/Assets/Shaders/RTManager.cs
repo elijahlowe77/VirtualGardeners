@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
+/// <summary>
+/// Drives ZonShader zone reveal: pushes transition RT + blend via MaterialPropertyBlock.
+/// </summary>
 public class RTManager : MonoBehaviour
 {
+    private static readonly int TransitionTextureId = Shader.PropertyToID("_TransitionTexture");
+    private static readonly int TransitionBlendId = Shader.PropertyToID("_TransitionBlend");
+
     [Header("Shader")]
-    [SerializeField] private Shader sunShader;
+    [FormerlySerializedAs("sunShader")]
+    [SerializeField] private Shader zonShader;
 
     [Header("Render Textures")]
-    [SerializeField] private RenderTexture sunRT_B;
+    [FormerlySerializedAs("sunRT_B")]
+    [SerializeField] private RenderTexture transitionRT;
 
     [Header("Blend")]
     [Range(0f, 1f)]
-    [SerializeField] private float blend = 0f;
+    [FormerlySerializedAs("blend")]
+    [SerializeField] private float transitionBlend = 0f;
 
-    private readonly List<Renderer> sunRenderers = new();
+    [SerializeField] private float transitionDuration = 3f;
+
+    private readonly List<Renderer> zonRenderers = new();
     private MaterialPropertyBlock block;
     private Coroutine transitionCoroutine;
 
@@ -25,62 +37,61 @@ public class RTManager : MonoBehaviour
         Renderer[] allRenderers = FindObjectsOfType<Renderer>();
         foreach (Renderer r in allRenderers)
         {
-            if (r.sharedMaterial != null && r.sharedMaterial.shader == sunShader)
+            if (r.sharedMaterial != null && r.sharedMaterial.shader == zonShader)
             {
-                sunRenderers.Add(r);
+                zonRenderers.Add(r);
             }
         }
     }
 
     void LateUpdate()
     {
-        foreach (Renderer r in sunRenderers)
+        foreach (Renderer r in zonRenderers)
         {
             r.GetPropertyBlock(block);
-            // _SunRT_A comes from the material itself, we only override _SunRT_B and _Blend
-            block.SetTexture("_TransitionTexture", sunRT_B);
-            block.SetFloat("_Blend", blend);
+            if (transitionRT != null)
+                block.SetTexture(TransitionTextureId, transitionRT);
+            block.SetFloat(TransitionBlendId, transitionBlend);
             r.SetPropertyBlock(block);
         }
     }
 
-    // Public API
     public void SetBlend(float value)
     {
-        blend = Mathf.Clamp01(value);
+        transitionBlend = Mathf.Clamp01(value);
     }
 
-    public void SwapSecondRT(RenderTexture newRT)
+    public void SwapTransitionRT(RenderTexture newRT)
     {
-        sunRT_B = newRT;
-    } 
+        transitionRT = newRT;
+    }
+
     public void StartTransition(RenderTexture newRT)
     {
-        SwapSecondRT(newRT);
-        
-        // Stop any existing transition
-      
-        
-        // Start new transition
-        transitionCoroutine = StartCoroutine(TransitionBlend(3f));
+        SwapTransitionRT(newRT);
+
+        if (transitionCoroutine != null)
+            StopCoroutine(transitionCoroutine);
+
+        transitionCoroutine = StartCoroutine(TransitionBlendRoutine(transitionDuration));
     }
-    
-    private IEnumerator TransitionBlend(float duration)
+
+    private IEnumerator TransitionBlendRoutine(float duration)
     {
         float startBlend = 0f;
         float endBlend = 1f;
         float elapsed = 0f;
-        
-        blend = startBlend;
-        
+
+        transitionBlend = startBlend;
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            blend = Mathf.Lerp(startBlend, endBlend, elapsed / duration);
+            transitionBlend = Mathf.Lerp(startBlend, endBlend, elapsed / duration);
             yield return null;
         }
-        
-        blend = endBlend;
+
+        transitionBlend = endBlend;
         transitionCoroutine = null;
     }
 }

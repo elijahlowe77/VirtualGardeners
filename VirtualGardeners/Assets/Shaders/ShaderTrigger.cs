@@ -1,40 +1,59 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
+/// <summary>
+/// Zone reveal trigger: crossfades ZonShader to a target RT, plays VFX, then enables reveal content.
+/// </summary>
 public class ShaderTrigger : MonoBehaviour
-{ 
-    public RTManager rtManager;
-    public RenderTexture transitionRT; 
-    public ParticleSystem particleSystem; 
-    public GameObject FirstChild;
-    // Start is called before the first frame update
+{
+    [FormerlySerializedAs("rtManager")]
+    public RTManager zoneRtManager;
+
+    [FormerlySerializedAs("transitionRT")]
+    public RenderTexture targetZoneRT;
+
+    [FormerlySerializedAs("particleSystem")]
+    public ParticleSystem revealParticles;
+
+    [FormerlySerializedAs("FirstChild")]
+    public GameObject revealContent;
+
+    [SerializeField] private float contentRevealDelay = 1f;
+    [SerializeField] private string playerObjectName = "PlayerModel";
+
     void Start()
     {
-        FirstChild = transform.GetChild(0).gameObject; 
-        FirstChild.SetActive(false);
+        if (revealContent == null && transform.childCount > 0)
+            revealContent = transform.GetChild(0).gameObject;
+
+        if (revealContent != null)
+            revealContent.SetActive(false);
+
+        if (zoneRtManager != null && targetZoneRT != null)
+            zoneRtManager.StartTransition(targetZoneRT);
+
+        StartCoroutine(RevealContentAfterDelay());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    } 
     void OnTriggerEnter(Collider other)
-    { 
-        Debug.Log(other.name);
-        if (other.name == "PlayerModel")
-        {
-            Debug.Log("Player entered the trigger");
-            rtManager.StartTransition(transitionRT); 
-            particleSystem.Play(); 
-            StartCoroutine(WaitForTransition());
-        } 
-        
-    }
-    IEnumerator WaitForTransition()
     {
-        yield return new WaitForSeconds(1f);
-        transform.GetChild(0).gameObject.SetActive(true);
+        if (other.name != playerObjectName)
+            return;
+
+        if (zoneRtManager != null && targetZoneRT != null)
+            zoneRtManager.StartTransition(targetZoneRT);
+
+        if (revealParticles != null)
+            revealParticles.Play();
+
+        StartCoroutine(RevealContentAfterDelay());
+    }
+
+    IEnumerator RevealContentAfterDelay()
+    {
+        yield return new WaitForSeconds(contentRevealDelay);
+        if (revealContent != null)
+            revealContent.SetActive(true);
     }
 }

@@ -1,0 +1,87 @@
+# AGENT WORKFLOW LOG — ZonShader Major Refactor Audit
+# Escalation: Trailblazer → Level 2 (Generator/Reviewer)
+# Date: 2026-07-19
+# Reason: User-requested Level 2 audit before save/reload on critical all-in-one zone shader.
+
+## Trailblazer Summary (completed work)
+1. Renamed/moved Sun.shadergraph → Assets/Shaders/ZonShader.shadergraph (GUID preserved: f76b5a00b58c36a4e86eb8fe31d5b9e7)
+2. Blackboard renames (URP-safe):
+   - _Texture2D → _BaseTexture
+   - _Blend → _TransitionBlend (critical: collided with URP _Blend)
+   - _ColorVal → _FallbackColor
+   - _ColorOrRT → _UseRenderTexture
+   - _Manifold → _ManifoldAmount
+   - _ManifoldIntensity → _ManifoldStrength
+   - _VertexDisplacement → _DisplaceAmount
+   - _LoopingVertexDisplacementNonManifold → _LoopDisplaceEnabled
+   - _Alpha → _Opacity
+   - _AlphaSpeed → _OpacityPulseSpeed
+   - _AlphaGradient → _OpacityGradient
+   - _TransitionTexture kept
+3. Removed unused orphans: Scale, Speed, Float, NoiseScale, Rotation, Center
+4. Graph path: Shader Graphs/Zon
+5. Updated 23 materials using shader GUID
+6. Updated RTManager, ShaderTrigger, SunRenderTextureManager, PlayerSunTrigger to new property IDs + FormerlySerializedAs field renames
+7. MCP console validation was incomplete due to Unity session disconnects during reimport
+
+## Level 2 Generator — Technical Audit Plan / Results
+### A. ShaderGraph integrity — PASS
+- 12 properties present with expected refs; no old DefaultReferenceName leftovers
+- GraphData path = Shader Graphs/Zon; 56 nodes; 51 edges
+- No dangling PropertyNodes; no orphan property IDs left in file
+- Wiring intact:
+  - BaseColor ← BaseTexture, TransitionTexture, TransitionBlend, UseRenderTexture, FallbackColor
+  - Position/Normal ← DisplaceAmount, Manifold*, LoopDisplace, TransitionBlend, textures
+  - Alpha ← Opacity, OpacityGradient, OpacityPulseSpeed
+- GraphData schema matches healthy GrowthShader.shadergraph (keys/SGVersion)
+
+### B. Scripts — PASS (with notes)
+- RTManager / ShaderTrigger / SunRenderTextureManager / PlayerSunTrigger all use _TransitionBlend / _TransitionTexture / _BaseTexture via PropertyToID
+- No remaining SetFloat("_Blend") / legacy SunRT setters
+- Script meta GUIDs unchanged (RTManager 3fae2b9a..., ShaderTrigger 4875eb66...) — scene script refs intact
+- FormerlySerializedAs covers scene YAML keys still on disk:
+  - sunShader→zonShader, sunRT_B→transitionRT, blend→transitionBlend
+  - rtManager→zoneRtManager, transitionRT→targetZoneRT, particleSystem→revealParticles, FirstChild→revealContent
+
+### C. Materials — PASS
+- All 23 ZonShader-GUID mats updated (_BaseTexture, _TransitionBlend, etc.)
+- URP _Blend retained alongside _TransitionBlend (collision fix held)
+- False positives (_Texture2D on particle mats, _VertexDisplacement on WaterTest) use OTHER shaders — not in scope
+
+### D. Scenes/Prefabs — PASS (migration pending first successful serialize)
+- GardenOftheZon / City Garden VR / WaterPlane / DevaBase still store OLD field names in YAML (expected)
+- Will remap on domain reload via FormerlySerializedAs; after you save scene, YAML should rewrite to new names
+
+### E. Live Unity Console / MCP — BLOCKED / INCONCLUSIVE
+- Unity MCP repeatedly disconnects / ping timeouts after refactor (likely domain reload + ShaderGraph reimport)
+- Could NOT green-check Console errors live from Level 2 tools at audit time
+- Static analysis does not prove import succeeded inside the Editor
+
+### Residual non-blocking risks (pre-existing / polish)
+1. ShaderTrigger.Start() still auto-fires StartTransition (behavior smell, not a rename bug)
+2. Player detection still uses other.name == "PlayerModel"
+3. FindObjectsOfType obsolete warnings possible on Unity 6000
+4. Script class filenames still Sun-era (RTManager, ShaderTrigger) — intentional to preserve meta GUIDs
+
+[PENDING_REVIEW]
+
+---
+## Level 2 Reviewer — CEO Summary
+
+**The Problem:** You renamed a project-critical zone shader and its driver scripts; before save/reload we needed proof nothing silently broke (property IDs, material keys, scene wiring, graph integrity).
+
+**The Fix:** Static Level 2 audit shows graph wiring, script property IDs, material keys, and FormerlySerializedAs scene migration paths are consistent — no blocking static defects found.
+
+**The Risk:** Live Unity Console could not be verified because MCP kept dropping during Editor reimport. Do not treat this as a full green light until YOU confirm: (1) Console has no ZonShader/script errors, (2) ZonShader opens in Shader Graph, (3) Play Mode still crossfades on trigger.
+
+### Verdict
+[APPROVED] for save/reload **with user gate**:
+1. Wait until Unity finishes importing (spinner idle)
+2. Check Console — zero errors mentioning ZonShader / RTManager / ShaderTrigger
+3. Open Assets/Shaders/ZonShader.shadergraph — Blackboard shows TransitionBlend, BaseTexture, etc.
+4. Enter Play Mode once — trigger a zone — confirm blend + RT swap still works
+5. Only then save scenes
+
+If step 2–4 fail: STOP, do not save over scenes; report Console text for Level 2 hotfix.
+
+[APPROVED]

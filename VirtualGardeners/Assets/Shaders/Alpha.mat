@@ -23,12 +23,17 @@ Material:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseTexture:
+        m_Texture: {fileID: 8400000, guid: 8af7b4d67257e9b4a94d1e220c4a8158, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -75,10 +80,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture2D:
-        m_Texture: {fileID: 8400000, guid: 8af7b4d67257e9b4a94d1e220c4a8158, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _TransitionTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -97,9 +98,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0
     - _AlphaClip: 0
-    - _AlphaSpeed: 0.25
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
@@ -109,11 +108,11 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Color: 0
     - _ColorMode: 1
-    - _ColorOrRT: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DisplaceAmount: 0
     - _DstBlend: 10
     - _DstBlendAlpha: 0
     - _Emission: 0
@@ -123,12 +122,14 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _LoopingVertexDisplacementNonManifold: 0
-    - _Manifold: 0
-    - _ManifoldIntensity: 1
+    - _LoopDisplaceEnabled: 0
+    - _ManifoldAmount: 0
+    - _ManifoldStrength: 1
     - _Metallic: 0
     - _NoiseScale: 0.2
     - _OcclusionStrength: 1
+    - _Opacity: 0
+    - _OpacityPulseSpeed: 0.25
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -141,7 +142,8 @@ Material:
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _Surface: 1
-    - _VertexDisplacement: 0
+    - _TransitionBlend: 0
+    - _UseRenderTexture: 1
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
@@ -150,11 +152,12 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Center: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorVal: {r: 0.20859289, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FallbackColor: {r: 0.20859289, g: 1, b: 0, a: 0}
     - _Rotation: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &7760519207545575268
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -167,4 +170,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 7
+  version: 10
